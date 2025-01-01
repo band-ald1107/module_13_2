@@ -8,12 +8,12 @@ bot = Bot(token=api)
 dp = Dispatcher(bot, storage=MemoryStorage())
 
 @dp.message_handler(commands=['start'])
-async def start(message: types.Message):
+async def start(message):
     print('Привет! Я бот помогающий твоему здоровью.')
 
-# Функция для обработки всех остальных сообщений
+
 @dp.message_handler(lambda message: True)
-async def all_messages(message: types.Message):
+async def all_messages(message):
     print('Введите команду /start, чтобы начать общение.')
 
 
